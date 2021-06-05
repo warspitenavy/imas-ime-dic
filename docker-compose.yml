@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    image: golang:1.15
+    working_dir: /go/src/app
+    volumes:
+      - ./:/go/src/app
+    command: >
+      bash -c 'go get &&
+      go build ./convert_dic.go &&
+      ./convert_dic'
